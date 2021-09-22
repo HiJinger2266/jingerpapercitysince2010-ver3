@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav.navbar {
+    display: flex;  /*彈性排列*/
+    justify-content: space-around;  /*搭配flex，橫向舒適地排列*/
+    align-items: center;    /*都放在橫列的中間*/
+    min-height: 10vh;
+    max-height: 10vh;
+    width: 100vw;
+    font-family: 'Urbanist', sans-serif;
+    background-color: rgba(6, 143, 97, 0.5);
+    box-shadow: 0 0 10px black;
+    position: fixed;
+    z-index: 9999;
+}
+
+div.left_logo {
+    padding-left: 5vh;
+    padding-right: 5vh;
+    border-radius: 5vh;
+    cursor: pointer;
+    transition: 500ms;
+}
+div.left_logo img {
+    height: 10vh;
+    size: auto;
+    vertical-align: middle;
+}
+div.left_logo:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: 500ms;
+}
+ul.right_links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    list-style: none;
+}
+ul.right_links a {
+    color: azure;
+    text-decoration: none;
+    letter-spacing: 0;
+    font-size: 3vh;
+    font-weight: 400;
+    transition: 500ms;
+}
+ul.right_links a:hover {
+    background-color: azure;
+    color: black;
+    padding-inline: 1.5vh;
+    border-radius: 3vh;
+    transition: 500ms;
+    
+}
+div.right_selection {
+    display: none;
+    cursor: pointer;
+    padding: 1.5vh;
+    border-radius: 5vh;
+}
+div.draw_line {
+    width: 3vh;
+    height: 0.5vh;
+    margin-block: 0.5vh;
+    background-color: white;
+}
+
+@media screen and (max-width:1200px) {
+    ul.right_links {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:900px) {
+    body {
+        overflow-x: hidden;
+    }
+    ul.right_links {
+        position: absolute;
+        height: 90vh;
+        width: 30%;
+        top: 10vh;
+        right: 0;
+        background-color: rgba(6, 143, 97, 0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*上面的設定完成之後，先往右邊收起來*/
+        transform: translateX(100%);
+        transition: transform 500ms ease-in;
+    }
+    .right_links li {
+        opacity: 0; /*透明度*/
+    }
+    div.right_selection {
+        display: block;
+        transition: 500ms;
+    }
+    div.right_selection:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+        transition: 500ms;
+    }
+}
+@media screen and (max-width:600px){
+    ul.right_links {
+        width: 100%;
+    }
+}
+
+
+/*注意針對的class有時候要多有時候要少，多嘗試幾種*/
+.right_links.slide_active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 100%;
+        transform: translateX(0px);
+    }
+}
+
+/*Reference https://youtu.be/gXkqy0b4M5g */
+
+
+
+.background {
+    size: cover;
+}
+.background img {
+    width: 100vw;
+}
+
+/*滾輪的啦*/
+::-webkit-scrollbar {
+    width: 1vw;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(6, 143, 97, 0.7);
+    border-radius: 10vw;
+    box-shadow: inset 0 0 0.25vw black;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(197, 255, 236, 0.7);
+}
+::-webkit-scrollbar-track {
+    background-color:rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 0.25vw black;
+}

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap');
+
+
+*{
+    transition: all 100ms;
+}
+
+.footer_nav {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;    /*用100vw會凸出去，不知道為什麼？*/
+    height: 50vh;
+    font-family: 'Urbanist';
+}
+
+.slogan {
+    color: azure;
+    font-size: 3vh;
+    font-family: 'Noto Serif TC', serif;
+}
+
+.bottom_links {
+    display: inline-flex;
+    list-style: none;
+}
+
+.bottom_links svg {
+    height: 8vh;
+    width: auto;
+    margin-block: 3vh;
+    margin-inline: 2vh;
+    color: aliceblue;
+    /*下面這行可有可無*/
+    fill: currentColor;
+}
+.bottom_links svg:hover {
+    color: aquamarine;
+}
+
+.bottom_words {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bottom_words p {
+    color: aliceblue;
+    font-size: 2vh;
+    margin: 1vh;
+}
+.bottom_words p a{
+    color: aliceblue;
+}
+
+
+
+
+/*Go To Top*/
+.gobacktop {
+    position: fixed;
+    text-decoration: none;
+    background-color: rgba(6, 143, 97, 0.5);
+    box-shadow: 0 0 10px black;
+    padding: 1vh;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: 500ms;
+    z-index: 999;
+
+    bottom: 0;
+    right: 5vw;
+    visibility: hidden;
+    opacity: 0;
+}
+/*js會呼叫這個按鈕出來*/
+.gobacktop.active {
+    visibility: visible;
+    opacity: 1;
+    bottom: 5vw;
+}
+
+.gobacktop svg {
+    height: 5vh;
+    width: 5vh;
+    color: white;
+}
+
+.gobacktop:hover {
+    background-color: rgba(255, 166, 0, 0.7);
+    transition: 500ms;
+}
+
+
+/*Reference https://youtu.be/Pd71ZZeIhaI */
+

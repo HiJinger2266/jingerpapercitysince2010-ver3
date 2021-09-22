@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;    /*用100vw會凸出去，不知道為什麼？*/
+    height: auto;
+    overflow: hidden;   /*不要用scrollable，會不小心多一層*/
+    font-family: 'Urbanist', sans-serif;
+}
+
+/*大框框放中間*/
+.card {
+    height: 100vh;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2.5px);
+
+    display: flex;
+    /*這兩個是放中間的關鍵*/
+    align-items: center;
+    justify-content: center;
+}
+.content {
+    display: block;
+    justify-content: space-around;
+    max-width: 30vw;
+    max-height: 80vh;
+}
+
+/*section background settings*/
+section {
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#story_01 {    background-image: url('./storypage/cover/storypage_001_beibun.JPG');}
+#story_02 {    background-image: url('./storypage/cover/storypage_002_xinyi-two.JPG');}
+#story_03 {    background-image: url('./storypage/cover/storypage_003_xinyi-one.JPG');}
+#story_04 {    background-image: url('./storypage/cover/storypage_004_president.JPG');}
+#story_05 {    background-image: url('./storypage/cover/storypage_005_tianchai.JPG');}
+#story_06 {    background-image: url('./storypage/cover/storypage_006_neiku.JPG');}
+#story_07 {    background-image: url('./storypage/cover/storypage_007_blvd.JPG');}
+#story_08 {    background-image: url('./storypage/cover/storypage_008_carrefour.JPG');}
+#story_09 {    background-image: url('./storypage/cover/storypage_009_minquan.JPG');}
+#story_10 {    background-image: url('./storypage/cover/storypage_010_realistic.JPG');}
+
+
+/*按鈕*/
+.button {
+    margin-block: 5vh;
+}
+.button_text {
+    padding: 2vh;
+    text-decoration: none;
+    color: aliceblue;
+    box-shadow: 0 0 5px black;
+    border-radius: 20vh;
+    font-size: 3vh;
+}
+#button_01 {    background-color: rgb(105, 105, 105);}
+#button_02 {    background-color: rgb(196, 196, 196);}
+#button_03 {    background-color: rgb(36, 55, 230);}
+#button_04 {    background-color: rgb(255, 153, 20);}
+#button_05 {    background-color: rgb(226, 223, 9);}
+#button_06 {    background-color: rgb(142, 38, 226);}
+#button_07 {    background-color: rgb(218, 115, 218);}
+#button_08 {    background-color: rgb(14, 212, 130);}
+#button_09 {    background-color: rgb(2, 217, 233);}
+#button_10 {    background-color: rgba(255, 255, 255, 0.5);}
+#button_01:hover, #button_02:hover, #button_03:hover, #button_04:hover, #button_05:hover, 
+#button_06:hover, #button_07:hover, #button_08:hover, #button_09:hover, #button_10:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.navdots {
+    /*absolute的位置可以透過上下左右距離決定*/
+    position: fixed;
+    z-index: 99;
+    top: 15vh;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+    justify-content: center;
+}
+.dot {
+    width: 1vw;
+    height: 1vw;
+    margin: 1vw;
+    border-radius: 5vw;
+    box-shadow: 0 0 2.5px black;
+    background-color: rgba(6, 143, 97, 0.5);
+    cursor: pointer;
+}
+.dot:hover {
+    background-color: rgba(255, 166, 0, 0.7);
+}
+.dot.active {
+    background-color: rgba(255, 166, 0, 0.7);
+    padding-inline: 1.5vw;
+}
+
+
+
+
+
+h1 {    font-size: 10vh;}
+h2 {    font-size: 8vh;}
+h3 {    font-size: 6vh;}
+h4 {    font-size: 4vh;}
+h5 {    font-size: 2vh;}
+h6 {    font-size: 1vh;}
+p {    font-size: 1vw;}
+
+
+@media screen and (max-width:600px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;    /*用100vw會凸出去，不知道為什麼？*/
+        height: 100%;
+        overflow-x: scroll;
+    }
+    .card {
+        height: 50vh;
+        width: 100%;
+        transform: translateY(50vh);
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 80vw;
+        max-height: 30vh;
+    }
+    section {
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+    /*敘述乾脆藏掉*/
+    .content p {
+        display: none;
+    }
+
+    .navdots {
+        width: 100%;
+    }
+    .dot {
+        width: 2vw;
+        height: 2vw;
+        margin: 1.5vw;
+    }
+    footer {
+        display: none;
+    }
+
+    /*下面這個藏不住*/
+    .gobacktop {
+        visibility: hidden;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+@media screen and (max-height:400px) {
+    /*敘述乾脆藏掉*/
+    .content p {
+        display: none;
+    }
+}
+
