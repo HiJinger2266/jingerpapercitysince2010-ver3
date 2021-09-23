@@ -7,26 +7,28 @@
     margin: 0;
     width: 100%;    /*用100vw會凸出去，不知道為什麼？*/
     height: auto;
-    overflow: hidden;   /*不要用scrollable，會不小心多一層*/
+    overflow-x: hidden;   /*不要用scrollable，會不小心多一層*/
     font-family: 'Urbanist', sans-serif;
 }
 
-/*大框框放中間*/
-.card {
-    height: 100vh;
-    width: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2.5px);
-
+/*標題放中上*/
+#title_01 {
+    height: auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
     display: flex;
     /*這兩個是放中間的關鍵*/
     align-items: center;
     justify-content: center;
 }
 .content {
-    display: block;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    max-width: 30vw;
+    max-width: 80%;
     max-height: 80vh;
 }
 
@@ -36,20 +38,15 @@ section {
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
+}
+#home_01 {    
+    background-image: url('./homepage/backgrounds/homepage-001-welcome.JPG');
     background-attachment: fixed;
     background-position: center center;
 }
-#story_01 {    background-image: url('./storypage/cover/storypage_001_beibun.JPG');}
-#story_02 {    background-image: url('./storypage/cover/storypage_002_xinyi-two.JPG');}
-#story_03 {    background-image: url('./storypage/cover/storypage_003_xinyi-one.JPG');}
-#story_04 {    background-image: url('./storypage/cover/storypage_004_president.JPG');}
-#story_05 {    background-image: url('./storypage/cover/storypage_005_tianchai.JPG');}
-#story_06 {    background-image: url('./storypage/cover/storypage_006_neiku.JPG');}
-#story_07 {    background-image: url('./storypage/cover/storypage_007_blvd.JPG');}
-#story_08 {    background-image: url('./storypage/cover/storypage_008_carrefour.JPG');}
-#story_09 {    background-image: url('./storypage/cover/storypage_009_minquan.JPG');}
-#story_10 {    background-image: url('./storypage/cover/storypage_010_realistic.JPG');}
-
+#home_02 {    
+    background-color: white;
+}
 
 /*按鈕*/
 .button {
@@ -170,14 +167,6 @@ p {    font-size: 1vw;}
     ::-webkit-scrollbar {
         display: none;
     }
-
-    h1 {    font-size: 8vh;}
-    h2 {    font-size: 6vh;}
-    h3 {    font-size: 4vh;}
-    h4 {    font-size: 3vh;}
-    h5 {    font-size: 2vh;}
-    h6 {    font-size: 1vh;}
-    p {    font-size: 1vw;}
 }
 
 @media screen and (max-height:400px) {

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+
+.container {
+    /*background-color: rgb(53, 53, 94);*/
+    background: url('./background_pm.JPG');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0ms;
+}
+
+.clock {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 20vw;
+    background-color: rgba(240, 248, 255, 0.5);
+    box-shadow: 0 0 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms;
+}
+.clock:hover {
+    background-color: aliceblue;
+    transition: 500ms;
+}
+
+.clock .hour, .clock .minute, .clock .second {
+    position: absolute;
+    z-index: 6;
+}
+
+/*我在旋轉的是這個隱形的大框框啦*/
+.clock .hour, .hr {
+    width: 6vw;
+    height: 6vw;
+}
+.clock .minute, .mn {
+    width: 12vw;
+    height: 12vw;
+}
+.clock .second, .sc {
+    width: 16vw;
+    height: 16vw;
+}
+.hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    position: absolute;
+    border-radius: 50%;
+}
+
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 0.5vw;
+    height: 3vw;
+    background: black;
+    z-index: 10;
+    border-radius: 10vw;
+}
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 0.5vw;
+    height: 6vw;
+    background: black;
+    z-index: 11;
+    border-radius: 10vw;
+}
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 0.25vw;
+    height: 10vw;
+    background: red;
+    z-index: 12;
+    border-radius: 10vw 10vw 0 0;
+}
+
+.number, .number_middle {
+    position: absolute;
+    text-align: center;
+    width: 4vw;
+    height: 18vw;
+    font-size: 5vh;
+    font-family: 'Urbanist', sans-serif;
+    z-index: 5;
+}
+.number {
+    width: 4vw;
+    height: 18vw;
+    --rotation: 0deg;
+}
+
+#twelve div{    transform: rotateZ(0);}
+#one div {    transform: rotateZ(30deg);}
+#two div {    transform: rotateZ(60deg);}
+#three div {    transform: rotateZ(90deg);}
+#four div {    transform: rotateZ(120deg);}
+#five div {    transform: rotateZ(150deg);}
+#six div {    transform: rotateZ(180deg);}
+#seven div {    transform: rotateZ(210deg);}
+#eight div {    transform: rotateZ(240deg);}
+#nine div {    transform: rotateZ(270deg);}
+#ten div {    transform: rotateZ(300deg);}
+#eleven div {    transform: rotateZ(330deg);}
+
+
+
+.words {
+    margin-left: 5vw;
+    padding: 2.5vw;
+    backdrop-filter: blur(5px);
+    /*background-color: rgba(255, 255, 255, 0.3);*/
+}
+
+h1 {    font-size: 10vh;}
+h2 {    font-size: 8vh;}
+h3 {    font-size: 6vh;}
+h4 {    font-size: 4vh;}
+h5 {    font-size: 2vh;}
+h6 {    font-size: 1vh;}
+p {    font-size: 1vw;}
+
+.words h2 {
+    font-size: 5vw;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 400;
+    color: aliceblue;
+}
+
+
+@media screen and (max-width:700px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .words {
+        margin-left: 0;
+        margin-top: 5vh;
+    }
+    .words h2 {
+        font-size: 6vh;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .clock {
+        width: 30vh;
+        height: 30vh;
+        border-radius: 30vh;
+    }
+    .clock .hour, .hr {
+        width: 9vh;
+        height: 9vh;
+    }
+    .clock .minute, .mn {
+        width: 18vh;
+        height: 18vh;
+    }
+    .clock .second, .sc {
+        width: 24vh;
+        height: 24vh;
+    }
+    .hr::before {
+        width: 0.75vh;
+        height: 4.5vh;
+        border-radius: 15vh;
+    }
+    .mn::before {
+        width: 0.75vh;
+        height: 9vh;
+        border-radius: 15vh;
+    }
+    .sc::before {
+        width: 0.375vh;
+        height: 15vh;
+        border-radius: 15vh 15vh 0 0;
+    }
+    .number, .number_middle {
+        width: 6vh;
+        height: 27vh;
+    }
+    .number {
+        width: 6vh;
+        height: 27vh;
+    }
+}
+

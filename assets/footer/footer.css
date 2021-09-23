@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap');
 
 
-*{
-    transition: all 100ms;
+footer {
+    transition: all 500ms;
 }
 
 .footer_nav {
@@ -37,9 +37,11 @@
     color: aliceblue;
     /*下面這行可有可無*/
     fill: currentColor;
+    transition: 500ms;
 }
 .bottom_links svg:hover {
-    color: aquamarine;
+    color: rgb(28, 209, 149);
+    transition: 500ms;
 }
 
 .bottom_words {
